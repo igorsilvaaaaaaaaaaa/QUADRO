@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Simples (Arrastar e Soltar)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="kanban-container">
+
+        <div class="kanban-column" id="new-tasks">
+            <h2 class="column-title">NOVAS TAREFAS <span class="counter" id="counter-new-tasks">0</span></h2>
+            <div class="task-input">
+                <textarea id="task-text" placeholder="Escrever nova tarefa..."></textarea>
+                <button id="add-task-btn">ESTUDAR</button>
+            </div>
+        </div>
+
+        <div class="kanban-column" id="to-do" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2 class="column-title">A FAZER <span class="counter" id="counter-to-do">0</span></h2>
+            <div class="task-list" id="list-to-do"></div>
+        </div>
+
+        <div class="kanban-column" id="in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2 class="column-title">ANDAMENTO <span class="counter" id="counter-in-progress">0</span></h2>
+            <div class="task-list" id="list-in-progress"></div>
+        </div>
+
+        <div class="kanban-column" id="completed" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h2 class="column-title">CONCLUÍDO <span class="counter" id="counter-completed">0</span></h2>
+            <div class="task-list" id="list-completed"></div>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
